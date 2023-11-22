@@ -2,11 +2,13 @@ import itertools
 
 
 def get_fizz_buzz_response(source_number, fizz, buzz):
-    if source_number % buzz == 0:
-        if source_number % fizz == 0:
-            return "fizz buzz"
+    is_fizz = source_number % fizz == 0
+    is_buzz = source_number % buzz == 0
+    if is_fizz and is_buzz:
+        return "fizz buzz"
+    if is_buzz:
         return "buzz"
-    if source_number % fizz == 0:
+    if is_fizz:
         return "fizz"
     return f"{source_number}"
 
