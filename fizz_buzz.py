@@ -2,6 +2,8 @@ import itertools
 
 
 def get_fizz_buzz_response(source_number):
+    if source_number % 35 == 0:
+        return "fizz buzz"
     if source_number % 7 == 0:
         return "buzz"
     if source_number % 5 == 0:
