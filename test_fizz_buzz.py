@@ -6,7 +6,7 @@ from fizz_buzz import get_fizz_buzz_iterator
 
 class FizzBuzzTest(unittest.TestCase):
     def test_first_four_numbers(self):
-        iterator = get_fizz_buzz_iterator()
+        iterator = get_fizz_buzz_iterator(fizz=5, buzz=7)
         first_four_items = list(itertools.islice(iterator, 0, 4))
         self.assertEqual(first_four_items, ["1", "2", "3", "4"])
 
@@ -34,6 +34,12 @@ class FizzBuzzTest(unittest.TestCase):
         iterator = get_fizz_buzz_iterator()
         fifth_item = itertools.islice(iterator, 34, 35).__next__()
         self.assertEqual(fifth_item, "fizz buzz")
+
+    def test_fizzbuzz_for_6_and_9(self):
+        iterator = get_fizz_buzz_iterator(6, 9)
+        first_fizz_buzz_item = itertools.islice(iterator, 17, 18).__next__()
+        self.assertEqual(first_fizz_buzz_item, "fizz buzz")
+
 
 if __name__ == '__main__':
     unittest.main()
