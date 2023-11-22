@@ -15,6 +15,10 @@ class FizzBuzzTest(unittest.TestCase):
         fifth_item = itertools.islice(iterator, 4, 5).__next__()
         self.assertEqual(fifth_item, "fizz")
 
+    def test_tenth_number_is_fizz(self):
+        iterator = get_fizz_buzz_iterator()
+        fifth_item = itertools.islice(iterator, 9, 10).__next__()
+        self.assertEqual(fifth_item, "fizz")
 
 if __name__ == '__main__':
     unittest.main()
